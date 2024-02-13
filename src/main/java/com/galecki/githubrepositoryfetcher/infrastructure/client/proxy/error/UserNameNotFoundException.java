@@ -1,2 +1,7 @@
-package com.galecki.githubrepositoryfetcher.infrastructure.client.proxy.error;class UserNameNotFoundException {
+package com.galecki.githubrepositoryfetcher.infrastructure.client.proxy.error;
+
+public class UserNameNotFoundException extends RuntimeException {
+    public UserNameNotFoundException(String message) {
+        super(message);
+    }
 }
