@@ -13,6 +13,7 @@ Methods:
 - `getAllRepositoryByUserName(String userName)`: Retrieves a list of user repositories based on the username.
 - `getAllBranchesByRepoName(String ownerName, String repoName)`: Retrieves a list of branches for a specified repository based on the owner's name and repository name.
 
+
 ## Classes
 
 ### GitHubRepoRestController
@@ -34,6 +35,7 @@ Methods:
 - `fetchAllUserRepositories(String userName)`: Retrieves a list of user repositories based on username.
 - `fetchAllRepositoryBranches(String ownerName, String repositoryName)`: Retrieves a list of branches for a specified repository based on the owner's name and repository name.
 - `validateAcceptHeader(String header)`: Validates the `Accept` header.
+
 
 ## DTO Classes
 
@@ -99,3 +101,48 @@ Methods:
 
 - `handleUserNameNotFoundException(UserNameNotFoundException exception)`: Handles the `UserNameNotFoundException` and returns an appropriate response(`UserNameNotFoundResponseDto`).
 
+
+## Usage
+
+### Running the Application
+
+To run the GitHub Repository Fetcher application, follow these steps:
+
+1. Clone the repository to your local machine:
+
+    ```bash
+    git clone https://github.com/PiotrGaleckiPL/GitHubRepositoryFetcher.git
+    ```
+
+2. Navigate to the project directory:
+
+    ```bash
+    cd GitHubRepositoryFetcher
+    ```
+
+3. Build the application using Maven:
+
+    ```bash
+    mvn clean install
+    ```
+
+4. Run the application:
+
+    ```bash
+    java -jar target/GitHubRepositoryFetcher-0.0.1-SNAPSHOT.jar
+    ```
+
+### Making API Requests
+
+Once the application is running, you can make API requests to retrieve information about GitHub user repositories.
+
+#### Fetching User Repositories
+
+To fetch repositories for a specific user, send a GET request to the `GET/{username}` endpoint.
+
+Include the `Accept: application/json` header in your request to ensure that the response is in JSON format.
+
+Example:
+
+```bash
+curl -H "Accept: application/json" http://localhost:8080/PiotrGaleckiPL
