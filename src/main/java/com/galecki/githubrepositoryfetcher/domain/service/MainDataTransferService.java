@@ -34,12 +34,12 @@ public class MainDataTransferService {
         for (Repo repo : repoList) {
             List<GetGitHubBranchResponseDto> getGitHubBranchResponseDtoList = fetchAllRepositoryBranches(
                     repo.owner().login(),
-                    repo.name());
+                    repo.repoName());
             List<Branch> branchList = new ArrayList<>();
             for (GetGitHubBranchResponseDto getGitHubBranchResponseDto : getGitHubBranchResponseDtoList) {
                 branchList.add(new Branch(getGitHubBranchResponseDto.name(), getGitHubBranchResponseDto.commit().sha()));
             }
-            responseDtoList.add(new GetRepoResponseDto(repo.name(), repo.owner().login(), List.copyOf(branchList)));
+            responseDtoList.add(new GetRepoResponseDto(repo.repoName(), repo.owner().login(), List.copyOf(branchList)));
         }
         return responseDtoList;
     }

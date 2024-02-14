@@ -4,5 +4,5 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.galecki.githubrepositoryfetcher.domain.model.client.Owner;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public record Repo(String name, Owner owner) {
+public record Repo(String repoName, Owner owner) {
 }
